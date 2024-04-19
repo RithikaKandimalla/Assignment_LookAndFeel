@@ -7,6 +7,10 @@ fetch('data.json')
     const reviews = data.Reviews;
     const businessTypes = data.BusinessType;
 
+    const businessImages = {
+  "1": "image1.jpg",
+};
+
     // Render featured businesses on the home page
     const featuredBusinessesContainer = document.getElementById('featured-businesses');
     if (featuredBusinessesContainer) {
@@ -15,6 +19,10 @@ fetch('data.json')
         const businessElement = document.createElement('div');
         businessElement.textContent = business.name;
         featuredBusinessesContainer.appendChild(businessElement);
+        // Create an <img> element for the business image
+    const imageElement = document.createElement('img');
+    imageElement.src = businessImages[business.business_id]; // Set the src attribute based on business_id
+    businessElement.appendChild(imageElement); // Append the image to the business element
       });
     }
 
