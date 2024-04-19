@@ -11,7 +11,68 @@ body {
     background: #f4f4f4;
     color: #333;
 }
+.front-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 2rem;
+}
 
+.front-page h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.circles {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0 0.5rem;
+}
+
+.front-page p {
+    margin-bottom: 1rem;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.menu-container a {
+    text-decoration: none;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.menu-container a.home {
+    background-color: #28a745;
+}
+
+.menu-container a.businesses {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.menu-container a.about {
+    background-color: #6c757d;
+}
 header {
     padding: 20px;
 }
