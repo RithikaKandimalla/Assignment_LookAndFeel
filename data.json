@@ -1,1 +1,250 @@
-
+{
+  "Places": [
+    {
+      "business_id": "1",
+      "name": "Busch Gardens Tampa Bay",
+      "address": "10165 McKinley Dr",
+      "city": "Tampa",
+      "state": "Florida",
+      "zipcode": "33612",
+      "phone": " (813) 884-4386",
+      "website": "https://buschgardens.com/",
+      "type_id": "1"
+    },
+    {
+      "business_id": "2",
+      "name": "Acropolis Greek Taverna - New Tampa",
+      "address": "14947 Bruce B Downs Blvd",
+      "city": "Tampa",
+      "state": "Florida",
+      "zipcode": "33613",
+      "phone": "(813) 971-1787",
+      "website": "http://www.acropolistaverna.com/locations/new-tampa",
+      "type_id": "2"
+    },
+    {
+      "business_id": "3",
+      "name": "Museum of Science & Industry",
+      "address": "4801 E Fowler Ave",
+      "city": "Tampa",
+      "state": "Florida",
+      "zipcode": "33617",
+      "phone": "(813) 987-6000",
+      "website": "https://www.msichicago.org/",
+      "type_id": "1"
+    },
+    {
+      "business_id": "4",
+      "name": "Tampa Premium Outlets",
+      "address": "2300 Grand Cypress Dr",
+      "city": "Lutz",
+      "state": "Florida",
+      "zipcode": "33559",
+      "phone": "(813) 938-6272",
+      "website": "https://www.premiumoutlets.com/outlet/tampa",
+      "type_id": "3"
+    },
+    {
+      "business_id": "5",
+      "name": "North 30th Sports Pub & Grille USF",
+      "address": "11402 N 30th St",
+      "city": "Tampa",
+      "state": "Florida",
+      "zipcode": "33612",
+      "phone": "(813) 999-8280",
+      "website": "http://north30thpub.com/",
+      "type_id": "2"
+    },
+    {
+      "business_id": "6",
+      "name": "Lettuce Lake Park",
+      "address": "6920 E Fletcher Ave",
+      "city": "Tampa",
+      "state": "Florida",
+      "zipcode": "33637",
+      "phone": "(813) 987-6204",
+      "website": "https://hcfl.gov/locations/lettuce-lake-conservation-park",
+      "type_id": "1"
+    },
+    {
+      "business_id": "7",
+      "name": "University Mall",
+      "address": "2200 E Fowler Ave",
+      "city": "Tampa",
+      "state": "Florida",
+      "zipcode": "33612",
+      "phone": "(813) 971-3465",
+      "website": "http://www.universitymalltampa.com/",
+      "type_id": "3"
+    },
+    {
+      "business_id": "8",
+      "name": "University Plaza",
+      "address": "2816 E Fletcher Ave",
+      "city": "Tampa",
+      "state": "Florida",
+      "zipcode": "33613",
+      "phone": " (813) 972-3396",
+      "website": "https://www.sembler.com/properties/university-plaza/",
+      "type_id": "3"
+    },
+    {
+      "business_id": "9",
+      "name": "Nightly Spirits - Ghost Tours & Pub Crawls",
+      "address": "1600 E 8th Ave",
+      "city": "Tampa",
+      "state": "Florida",
+      "zipcode": "33605",
+      "phone": "(844) 678-8687",
+      "website": "https://nightlyspirits.com/",
+      "type_id": "1"
+    },
+    {
+      "business_id": "10",
+      "name": "Babushka's - Temple Terrace",
+      "address": "12639 N 56th St",
+      "city": "Tampa",
+      "state": "Florida",
+      "zipcode": "33617",
+      "phone": "(813) 515-7415",
+      "website": "https://www.babushkas.us/temple-terrace",
+      "type_id": "2"
+    }
+  ],
+  "Reviews": [
+    {
+      "review_id": "1",
+      "business_id": "1",
+      "rating": "4",
+      "Reviewed by": "Joshua Tam"
+    },
+    {
+      "review_id": "2",
+      "business_id": "1",
+      "rating": "5",
+      "Reviewed by": "Henry Nelson"
+    },
+    {
+      "review_id": "1",
+      "business_id": "9",
+      "rating": "5",
+      "Reviewed by": "Victoria Saunders"
+    },
+    {
+      "review_id": "2",
+      "business_id": "9",
+      "rating": "5",
+      "Reviewed by": "Eva Fernandez"
+    },
+    {
+      "review_id": "1",
+      "business_id": "6",
+      "rating": "5",
+      "Reviewed by": "Amy Jean"
+    },
+    {
+      "review_id": "2",
+      "business_id": "6",
+      "rating": "4",
+      "Reviewed by": "George Wilkens"
+    },
+    {
+      "review_id": "1",
+      "business_id": "3",
+      "rating": "5",
+      "Reviewed by": "Kin Wong"
+    },
+    {
+      "review_id": "2",
+      "business_id": "3",
+      "rating": "4",
+      "Reviewed by": "Sanka Hettiarachchi"
+    },
+    {
+      "review_id": "1",
+      "business_id": "2",
+      "rating": "4",
+      "Reviewed by": "Erika Asthenia"
+    },
+    {
+      "review_id": "2",
+      "business_id": "2",
+      "rating": "5",
+      "Reviewed by": "lisa gelzer"
+    },
+    {
+      "review_id": "1",
+      "business_id": "5",
+      "rating": "4",
+      "Reviewed by": "Jack"
+    },
+    {
+      "review_id": "2",
+      "business_id": "5",
+      "rating": "4",
+      "Reviewed by": "Chianti Bloom"
+    },
+    {
+      "review_id": "1",
+      "business_id": "10",
+      "rating": "4",
+      "Reviewed by": "A Treat"
+    },
+    {
+      "review_id": "2",
+      "business_id": "10",
+      "rating": "2",
+      "Reviewed by": "fRo0tLo0p"
+    },
+    {
+      "review_id": "1",
+      "business_id": "7",
+      "rating": "4",
+      "Reviewed by": "Douglas Baldwin"
+    },
+    {
+      "review_id": "2",
+      "business_id": "7",
+      "rating": "5",
+      "Reviewed by": "Elise Schmeling"
+    },
+    {
+      "review_id": "1",
+      "business_id": "8",
+      "rating": "4",
+      "Reviewed by": "Awilda Perez"
+    },
+    {
+      "review_id": "2",
+      "business_id": "8",
+      "rating": "4",
+      "Reviewed by": "Jim"
+    },
+    {
+      "review_id": "1",
+      "business_id": "4",
+      "rating": "5",
+      "Reviewed by": "Prashanth"
+    },
+    {
+      "review_id": "2",
+      "business_id": "4",
+      "rating": "5",
+      "Reviewed by": "Phani"
+    }
+  ],
+  "Business Type": [
+    {
+      "type_id": "1",
+      "type_name": "public_recreation"
+    },
+    {
+      "type_id": "2",
+      "type_name": "Resturents"
+    },
+    {
+      "type_id": "3",
+      "type_name": "Shpoing mall"
+    }
+  ]
+}
