@@ -1,32 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample HTML Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #666;
-            line-height: 1.6;
-        }
-    </style>
+    <title>Local Businesses Near USF</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
- 
+<body>
+    <header>
+        <h1>Local Businesses Near USF</h1>
+    </header>
+    <input type="text" id="searchInput" onkeyup="searchBusinesses()" placeholder="Search for businesses...">
+    <div id="business-list"></div>
+    <footer>
+        <p>Copyright © 2024</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
 </html>
-<!--Your HTML code here-->
