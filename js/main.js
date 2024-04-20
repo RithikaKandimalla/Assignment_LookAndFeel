@@ -9,17 +9,6 @@ fetch('data.json')
     const reviews = data.Reviews;
     const placeTypes = data['Business Type'];
 
-    // Render featured businesses on the home page
-    const featuredBusinessesContainer = document.getElementById('featured-businesses');
-    if (featuredBusinessesContainer) {
-      const featuredBusinesses = places.slice(0, 3);
-      featuredBusinesses.forEach(place => {
-        const businessElement = document.createElement('div');
-        businessElement.textContent = place.name;
-        featuredBusinessesContainer.appendChild(businessElement);
-      });
-    }
-
     // Render  places list on the reviews page
     const businessListContainer = document.getElementById('business-list');
     if (businessListContainer) {
