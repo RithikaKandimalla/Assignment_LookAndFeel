@@ -43,7 +43,7 @@ const renderBusinessList = (places, container) => {
         businessElement.appendChild(imageElement);
 
         // Create a paragraph element for the place's name
-        const nameElement = document.createElement('p');
+        const nameElement = document.createElement('div');
         nameElement.textContent = place.name;
         businessElement.appendChild(nameElement);
 
