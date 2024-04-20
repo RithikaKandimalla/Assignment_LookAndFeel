@@ -14,7 +14,7 @@ fetch('data.json')
     if (currentPage === 'business.html') {
       const businessListContainer = document.getElementById('business-list');
       if (businessListContainer) {
-        renderPlacesList(places, businessListContainer);
+        renderBusinessList(places, businessListContainer);
       }
     }
 
@@ -31,6 +31,30 @@ fetch('data.json')
     }
   })
   .catch(error => console.error('Error loading data:', error));
+// Function to render the places list with images
+const renderBusinessList = (places, container) => {
+    places.forEach(place => {
+        const businessElement = document.createElement('div');
+        businessElement.classList.add('business-item');
+        
+        const imageElement = document.createElement('img'); 
+        imageElement.src = place.image;
+        imageElement.alt = place.name + ' image';
+        businessElement.appendChild(imageElement);
+
+        // Create a paragraph element for the place's name
+        const nameElement = document.createElement('p');
+        nameElement.textContent = place.name;
+        businessElement.appendChild(nameElement);
+
+        businessElement.addEventListener('click', () => {
+            window.location.href = `business-details.html?id=${place.business_id}`;
+        });
+
+        container.appendChild(businessElement);
+    });
+};
+
 
 // Function to render the places list
 const renderPlacesList = (places, container) => {
