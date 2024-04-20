@@ -46,7 +46,7 @@ fetch('data.json')
 
       if (placeName && placeImage && placeAddress && placePhone && placeWebsite && placeReviewsContainer) {
         placeName.textContent = place.name;
-        placeImage.src = 'path/to/place/image.jpg'; // Replace with your image file path
+        placeImage.src = place.image; // Replace with your image file path
         placeAddress.textContent = `${place.address}, ${place.city}, ${place.state} ${place.zipcode}`;
         placePhone.textContent = place.phone;
         placeWebsite.href = place.website;
