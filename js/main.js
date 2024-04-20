@@ -11,11 +11,10 @@ let reviews = [];
           // Append the image element to the business element
     businessElement.appendChild(imageElement);
 
-    // Create a text node for the place's name
-    const nameTextNode = document.createTextNode(place.name);
-
-    // Append the name text node to the business element
-    businessElement.appendChild(nameTextNode);
+   // Create a paragraph element for the place's name
+        const nameElement = document.createElement('p');
+        nameElement.textContent = place.name;
+        businessElement.appendChild(nameElement);
           businessElement.addEventListener('click', () => {
           window.location.href = `business-details.html?id=${place.business_id}`;
         });
