@@ -9,14 +9,26 @@ fetch('data.json')
     const reviews = data.Reviews;
     const placeTypes = data['Business Type'];
 
-    // Render  places list on the reviews page
+    // Render  places list on the places page
     const businessListContainer = document.getElementById('business-list');
     if (businessListContainer) {
       places.forEach(place => {
         const businessElement = document.createElement('div');
-        businessElement.textContent = place.name;
-        businessElement.addEventListener('click', () => {
-          renderBusinessDetails(business);
+        const imageElement = document.createElement('img'); 
+        // Set the source attribute of the image element to the place's image URL
+        imageElement.src = place.image;
+     // Set other attributes for the image element as needed (e.g., alt text)
+         imageElement.alt = place.name + ' image';
+          // Append the image element to the business element
+    businessElement.appendChild(imageElement);
+
+    // Create a text node for the place's name
+    const nameTextNode = document.createTextNode(place.name);
+
+    // Append the name text node to the business element
+    businessElement.appendChild(nameTextNode);
+         businessElement.addEventListener('click', () => {
+          renderBusinessDetails(place);
           window.location.href = 'business-details.html';
         });
         businessListContainer.appendChild(businessElement);
