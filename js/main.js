@@ -95,7 +95,7 @@ const renderPlaceDetails = (place) => {
       const reviewElement = document.createElement('div');
       reviewElement.classList.add('review');
       reviewElement.innerHTML = `
-        <p>${review.rating} stars by ${review['Reviewed by']}</p>
+        <p>${review.rating} stars by ${review['Reviewed by ']}</p>
         <button class="edit-review-btn">Edit</button>
         <button class="delete-review-btn">Delete</button>
       `;
@@ -139,7 +139,7 @@ addReviewForm.onsubmit = (event) => {
   const newReview = {
     business_id: placeId,
     rating,
-    'Reviewed by': reviewedBy
+    'Reviewed by ': reviewedBy
   };
 
   reviews.push(newReview);
@@ -164,7 +164,7 @@ const addReviewEventListeners = (placeId) => {
         (r) =>
           r.business_id === placeId &&
           r.rating === reviewElement.querySelector('p').textContent.split(' ')[0] &&
-          r['Reviewed by'] === reviewElement.querySelector('p').textContent.split(' by ')[1]
+          r['Reviewed by '] === reviewElement.querySelector('p').textContent.split(' by ')[1]
       );
 
       if (review) {
@@ -177,7 +177,7 @@ const addReviewEventListeners = (placeId) => {
         (r) =>
           r.business_id === placeId &&
           r.rating === reviewElement.querySelector('p').textContent.split(' ')[0] &&
-          r['Reviewed by'] === reviewElement.querySelector('p').textContent.split(' by ')[1]
+          r['Reviewed by '] === reviewElement.querySelector('p').textContent.split(' by ')[1]
       );
 
       if (review) {
