@@ -22,7 +22,7 @@
       "phone": "(813) 971-1787",
       "website": "http://www.acropolistaverna.com/locations/new-tampa",
       "type_id": "2",
-      "image": "images/image1.jpg"
+      "image": "img/image1.png"
     },
     {
       "business_id": "3",
@@ -34,7 +34,7 @@
       "phone": "(813) 987-6000",
       "website": "https://www.msichicago.org/",
       "type_id": "1",
-      "image": "images/image1.jpg"
+      "image": "img/image1.png"
     },
     {
       "business_id": "4",
@@ -46,7 +46,7 @@
       "phone": "(813) 938-6272",
       "website": "https://www.premiumoutlets.com/outlet/tampa",
       "type_id": "3",
-      "image": "images/image1.jpg"
+      "image": "img/image1.png"
     },
     {
       "business_id": "5",
@@ -58,7 +58,7 @@
       "phone": "(813) 999-8280",
       "website": "http://north30thpub.com/",
       "type_id": "2",
-      "image": "images/image1.jpg"
+      "image": "img/image1.png"
     },
     {
       "business_id": "6",
@@ -70,7 +70,7 @@
       "phone": "(813) 987-6204",
       "website": "https://hcfl.gov/locations/lettuce-lake-conservation-park",
       "type_id": "1",
-      "image": "images/image1.jpg"
+      "image": "img/image1.png"
     },
     {
       "business_id": "7",
@@ -82,7 +82,7 @@
       "phone": "(813) 971-3465",
       "website": "http://www.universitymalltampa.com/",
       "type_id": "3",
-      "image": "images/image1.jpg"
+      "image": "img/image1.png"
     },
     {
       "business_id": "8",
@@ -94,7 +94,7 @@
       "phone": " (813) 972-3396",
       "website": "https://www.sembler.com/properties/university-plaza/",
       "type_id": "3",
-      "image": "images/image1.jpg"
+      "image": "img/image1.png"
     },
     {
       "business_id": "9",
@@ -106,7 +106,7 @@
       "phone": "(844) 678-8687",
       "website": "https://nightlyspirits.com/",
       "type_id": "1",
-      "image": "images/image1.jpg"
+      "image": "img/image1.png"
     },
     {
       "business_id": "10",
@@ -118,7 +118,7 @@
       "phone": "(813) 515-7415",
       "website": "https://www.babushkas.us/temple-terrace",
       "type_id": "2",
-      "image": "images/image1.jpg"
+      "image": "img/image1.png"
     }
   ],
   "Reviews": [
