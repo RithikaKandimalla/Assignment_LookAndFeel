@@ -7,7 +7,7 @@ fetch('data.json')
     // Handle the loaded data
     const places = data.Places;
     const reviews = data.Reviews;
-    const businessTypes = data.BusinessType;
+    const placeTypes = data['Business Type'];
 
     // Render featured businesses on the home page
     const featuredBusinessesContainer = document.getElementById('featured-businesses');
