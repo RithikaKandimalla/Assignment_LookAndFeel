@@ -13,19 +13,19 @@ fetch('data.json')
     const featuredBusinessesContainer = document.getElementById('featured-businesses');
     if (featuredBusinessesContainer) {
       const featuredBusinesses = places.slice(0, 3);
-      featuredBusinesses.forEach(business => {
+      featuredBusinesses.forEach(place => {
         const businessElement = document.createElement('div');
-        businessElement.textContent = business.name;
+        businessElement.textContent = place.name;
         featuredBusinessesContainer.appendChild(businessElement);
-      };
+      });
     }
 
-    // Render  places list on the revies page
+    // Render  places list on the reviews page
     const businessListContainer = document.getElementById('business-list');
     if (businessListContainer) {
-      places.forEach(business => {
+      places.forEach(place => {
         const businessElement = document.createElement('div');
-        businessElement.textContent = business.name;
+        businessElement.textContent = place.name;
         businessElement.addEventListener('click', () => {
           renderBusinessDetails(business);
           window.location.href = 'business-details.html';
@@ -165,4 +165,7 @@ const addReviewEventListeners = (placeId) => {
 
         // Re-render the place details to update the UI
         renderPlaceDetails(places.find(place => place.business_id === placeId));
-      }
+       }
+    }
+  });  
+};
