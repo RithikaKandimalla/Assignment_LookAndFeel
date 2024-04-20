@@ -43,6 +43,7 @@ fetch('data.json')
    
     // Render place details on the place-details page
     const renderPlaceDetails = (place) => {
+      const placeReviews = data.Reviews.filter(review => review.business_id === place.business_id);
       const placeName = document.getElementById('place-name');
       const placeImage = document.getElementById('place-image');
       const placeAddress = document.getElementById('place-address');
@@ -61,7 +62,8 @@ fetch('data.json')
         placeReviewsContainer.innerHTML = '';
 
         // Render reviews for the place
-        const placeReviews = reviews.filter(review => review.placeId === place.business_id);
+       
+       
         placeReviews.forEach(review => {
           const reviewElement = document.createElement('div');
           reviewElement.classList.add('review');
@@ -71,11 +73,11 @@ fetch('data.json')
             <button class="delete-review-btn">Delete</button>
           `;
           placeReviewsContainer.appendChild(reviewElement);
-           // Add event listeners for CRUD operations
-        addReviewEventListeners(place.business_id);
+         
         });
 
-        
+           // Add event listeners for CRUD operations
+        addReviewEventListeners(place.business_id);
       }
     };
 
@@ -147,9 +149,9 @@ const addReviewEventListeners = (placeId) => {
       const reviewElement = event.target.parentElement;
       const review = reviews.find(
         (r) =>
-          r.placeId === placeId &&
+          r.business_id  === placeId &&
           r.rating === reviewElement.querySelector('p').textContent.split(' ')[0] &&
-          r.reviewedBy === reviewElement.querySelector('p').textContent.split(' by ')[1]
+          r['Reviewed by']  === reviewElement.querySelector('p').textContent.split(' by ')[1]
       );
 
       if (review) {
@@ -160,9 +162,9 @@ const addReviewEventListeners = (placeId) => {
       const reviewElement = event.target.parentElement;
       const review = reviews.find(
         (r) =>
-          r.placeId === placeId &&
+          r.business_id=== placeId &&
           r.rating === reviewElement.querySelector('p').textContent.split(' ')[0] &&
-          r.reviewedBy === reviewElement.querySelector('p').textContent.split(' by ')[1]
+          r['Reviewed by'] === reviewElement.querySelector('p').textContent.split(' by ')[1]
       );
 
       if (review) {
