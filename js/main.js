@@ -1,17 +1,5 @@
 let reviews = [];
-
-// Load data from JSON file
-fetch('data.json')
-  .then(response => response.json())
-  .then(data => {
-    // Handle the loaded data
-    const places = data.Places;
-    const reviews = data.Reviews;
-    const placeTypes = data['Business Type'];
-
-    // Render  places list on the places page
-    const businessListContainer = document.getElementById('business-list');
-    if (businessListContainer) {
+ const renderBusinessList = (places, container) => {
       places.forEach(place => {
         const businessElement = document.createElement('div');
         const imageElement = document.createElement('img'); 
@@ -27,14 +15,29 @@ fetch('data.json')
 
     // Append the name text node to the business element
     businessElement.appendChild(nameTextNode);
-         businessElement.addEventListener('click', () => {
-          renderBusinessDetails(place);
-          window.location.href = 'business-details.html';
+          businessElement.addEventListener('click', () => {
+          window.location.href = `business-details.html?id=${place.business_id}`;
         });
-        businessListContainer.appendChild(businessElement);
+        container.appendChild(businessElement);
       });
     }
 
+// Load data from JSON file
+fetch('data.json')
+  .then(response => response.json())
+  .then(data => {
+    // Handle the loaded data
+    const places = data.Places;
+    reviews = data.Reviews;
+    const placeTypes = data['Business Type'];
+
+    // Render  places list on the places page
+    const businessListContainer = document.getElementById('business-list');
+    if (businessListContainer) {
+       renderBusinessList(places, businessListContainer); // Call renderBusinessList function
+    }
+      // Function to render the list of businesses on the places page
+    
  
    
     // Render place details on the place-details page
@@ -67,10 +70,11 @@ fetch('data.json')
             <button class="delete-review-btn">Delete</button>
           `;
           placeReviewsContainer.appendChild(reviewElement);
+           // Add event listeners for CRUD operations
+        addReviewEventListeners(place.business_id);
         });
 
-        // Add event listeners for CRUD operations
-        addReviewEventListeners(place.business_id);
+        
       }
     };
 
