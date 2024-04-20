@@ -1,8 +1,10 @@
+ 
 {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -11,6 +13,8 @@ body {
     background: #f4f4f4;
     color: #333;
 }
+
+/* Front page styles */
 .front-page {
     display: flex;
     flex-direction: column;
@@ -23,20 +27,6 @@ body {
 .front-page h1 {
     font-size: 3rem;
     margin-bottom: 2rem;
-}
-
-.circles {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
-}
-
-.circle {
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    border-radius: 50%;
-    margin: 0 0.5rem;
 }
 
 .front-page p {
@@ -61,18 +51,11 @@ body {
     transition: background-color 0.3s;
 }
 
-.menu-container a.home {
-    background-color: #28a745;
+.menu-container a:hover {
+    background-color: #555;
 }
 
-.menu-container a.businesses {
-    background-color: #ffc107;
-    color: #333;
-}
-
-.menu-container a.about {
-    background-color: #6c757d;
-}
+/* Header and navigation styles */
 header {
     padding: 20px;
 }
@@ -104,6 +87,7 @@ nav ul li a:hover {
     background-color: #555;
 }
 
+/* Main content styles */
 main {
     max-width: 800px;
     margin: 0 auto;
@@ -122,6 +106,7 @@ p {
     line-height: 1.5;
 }
 
+/* Footer styles */
 footer {
     padding: 20px;
     background-color: #333;
@@ -143,15 +128,8 @@ footer {
     text-align: left;
 }
 
-.business-item h3 {
+.business-item img {
+    max-width: 100%;
+    border-radius: 5px;
     margin-bottom: 10px;
-}
-
-.business-item p {
-    margin-bottom: 5px;
-}
-
-#business-logo {
-    max-width: 200px;
-    margin-bottom: 20px;
 }
