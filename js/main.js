@@ -1,26 +1,4 @@
 let reviews = [];
- const renderBusinessList = (places, container) => {
-      places.forEach(place => {
-        const businessElement = document.createElement('div');
-         businessElement.classList.add('business-item'); 
-        const imageElement = document.createElement('img'); 
-        // Set the source attribute of the image element to the place's image URL
-        imageElement.src = place.image;
-     // Set other attributes for the image element as needed (e.g., alt text)
-         imageElement.alt = place.name + ' image';
-          // Append the image element to the business element
-    businessElement.appendChild(imageElement);
-
-   // Create a paragraph element for the place's name
-        const nameElement = document.createElement('p');
-        nameElement.textContent = place.name;
-        businessElement.appendChild(nameElement);
-          businessElement.addEventListener('click', () => {
-          window.location.href = `business-details.html?id=${place.business_id}`;
-        });
-        container.appendChild(businessElement);
-      });
-    }
 
 // Load data from JSON file
 fetch('data.json')
@@ -31,67 +9,79 @@ fetch('data.json')
     reviews = data.Reviews;
     const placeTypes = data['Business Type'];
 
-    // Render  places list on the places page
-    const businessListContainer = document.getElementById('business-list');
-    if (businessListContainer) {
-       renderBusinessList(places, businessListContainer); // Call renderBusinessList function
-    }
-      // Function to render the list of businesses on the places page
-    
- 
-   
-    // Render place details on the place-details page
-    const renderPlaceDetails = (place) => {
-      const placeReviews = data.Reviews.filter(review => review.business_id === place.business_id);
-      const placeName = document.getElementById('place-name');
-      const placeImage = document.getElementById('place-image');
-      const placeAddress = document.getElementById('place-address');
-      const placePhone = document.getElementById('place-phone');
-      const placeWebsite = document.getElementById('place-website');
-      const placeReviewsContainer = document.getElementById('place-reviews');
-
-      if (placeName && placeImage && placeAddress && placePhone && placeWebsite && placeReviewsContainer) {
-        placeName.textContent = place.name;
-        placeImage.src = place.image; // Replace with your image file path
-        placeAddress.textContent = `${place.address}, ${place.city}, ${place.state} ${place.zipcode}`;
-        placePhone.textContent = place.phone;
-        placeWebsite.href = place.website;
-
-        // Clear existing reviews
-        placeReviewsContainer.innerHTML = '';
-
-        // Render reviews for the place
-       
-       
-        placeReviews.forEach(review => {
-          const reviewElement = document.createElement('div');
-          reviewElement.classList.add('review');
-          reviewElement.innerHTML = `
-            <p>${review.rating} stars by ${review.reviewedBy}</p>
-            <button class="edit-review-btn">Edit</button>
-            <button class="delete-review-btn">Delete</button>
-          `;
-          placeReviewsContainer.appendChild(reviewElement);
-         
-        });
-
-           // Add event listeners for CRUD operations
-        addReviewEventListeners(place.business_id);
-      }
-    };
-
-    // Check the current page URL and render the appropriate content
+    // Render places list on the places page
     const currentPage = window.location.href.split('/').pop();
-    if (currentPage === 'place-details.html') {
+    if (currentPage === 'business.html') {
+      const businessListContainer = document.getElementById('business-list');
+      if (businessListContainer) {
+        renderPlacesList(places, businessListContainer);
+      }
+    }
+
+    // Render place details on the place-details page
+    if (currentPage === 'business-details.html') {
       const urlParams = new URLSearchParams(window.location.search);
       const placeId = urlParams.get('id');
       const place = places.find(p => p.business_id === placeId);
       if (place) {
         renderPlaceDetails(place);
+      } else {
+        console.error('Place not found.');
       }
     }
   })
   .catch(error => console.error('Error loading data:', error));
+
+// Function to render the places list
+const renderPlacesList = (places, container) => {
+  container.innerHTML = ''; // Clear the container
+
+  places.forEach(place => {
+    const businessElement = document.createElement('div');
+    businessElement.textContent = place.name;
+    businessElement.addEventListener('click', () => {
+      window.location.href = `business-details.html?id=${place.business_id}`;
+    });
+    container.appendChild(businessElement);
+  });
+};
+
+// Render place details on the place-details page
+const renderPlaceDetails = (place) => {
+  const placeName = document.getElementById('place-name');
+  const placeImage = document.getElementById('place-image');
+  const placeAddress = document.getElementById('place-address');
+  const placePhone = document.getElementById('place-phone');
+  const placeWebsite = document.getElementById('place-website');
+  const placeReviewsContainer = document.getElementById('place-reviews');
+
+  if (placeName && placeImage && placeAddress && placePhone && placeWebsite && placeReviewsContainer) {
+    placeName.textContent = place.name;
+    placeImage.src = place.image;
+    placeAddress.textContent = `${place.address}, ${place.city}, ${place.state} ${place.zipcode}`;
+    placePhone.textContent = place.phone;
+    placeWebsite.href = place.website;
+
+    // Clear existing reviews
+    placeReviewsContainer.innerHTML = '';
+
+    // Render reviews for the place
+    const placeReviews = reviews.filter(review => review.business_id === place.business_id);
+    placeReviews.forEach(review => {
+      const reviewElement = document.createElement('div');
+      reviewElement.classList.add('review');
+      reviewElement.innerHTML = `
+        <p>${review.rating} stars by ${review['Reviewed by']}</p>
+        <button class="edit-review-btn">Edit</button>
+        <button class="delete-review-btn">Delete</button>
+      `;
+      placeReviewsContainer.appendChild(reviewElement);
+    });
+
+    // Add event listeners for CRUD operations
+    addReviewEventListeners(place.business_id);
+  }
+};
 
 // Add Review Modal functionality
 const modal = document.getElementById('add-review-modal');
@@ -123,9 +113,9 @@ addReviewForm.onsubmit = (event) => {
   const placeId = urlParams.get('id');
 
   const newReview = {
-    placeId,
+    business_id: placeId,
     rating,
-    reviewedBy
+    'Reviewed by': reviewedBy
   };
 
   reviews.push(newReview);
@@ -148,9 +138,9 @@ const addReviewEventListeners = (placeId) => {
       const reviewElement = event.target.parentElement;
       const review = reviews.find(
         (r) =>
-          r.business_id  === placeId &&
+          r.business_id === placeId &&
           r.rating === reviewElement.querySelector('p').textContent.split(' ')[0] &&
-          r['Reviewed by']  === reviewElement.querySelector('p').textContent.split(' by ')[1]
+          r['Reviewed by'] === reviewElement.querySelector('p').textContent.split(' by ')[1]
       );
 
       if (review) {
@@ -161,7 +151,7 @@ const addReviewEventListeners = (placeId) => {
       const reviewElement = event.target.parentElement;
       const review = reviews.find(
         (r) =>
-          r.business_id=== placeId &&
+          r.business_id === placeId &&
           r.rating === reviewElement.querySelector('p').textContent.split(' ')[0] &&
           r['Reviewed by'] === reviewElement.querySelector('p').textContent.split(' by ')[1]
       );
@@ -172,7 +162,7 @@ const addReviewEventListeners = (placeId) => {
 
         // Re-render the place details to update the UI
         renderPlaceDetails(places.find(place => place.business_id === placeId));
-       }
+      }
     }
-  });  
+  });
 };
