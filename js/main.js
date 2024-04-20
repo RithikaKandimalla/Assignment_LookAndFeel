@@ -1,3 +1,5 @@
+let reviews = [];
+
 // Load data from JSON file
 fetch('data.json')
   .then(response => response.json())
@@ -7,10 +9,6 @@ fetch('data.json')
     const reviews = data.Reviews;
     const businessTypes = data.BusinessType;
 
-    const businessImages = {
-  "1": "image1.jpg",
-};
-
     // Render featured businesses on the home page
     const featuredBusinessesContainer = document.getElementById('featured-businesses');
     if (featuredBusinessesContainer) {
@@ -19,14 +17,9 @@ fetch('data.json')
         const businessElement = document.createElement('div');
         businessElement.textContent = business.name;
         featuredBusinessesContainer.appendChild(businessElement);
-        // Create an <img> element for the business image
-    const imageElement = document.createElement('img');
-    imageElement.src = businessImages[business.business_id]; // Set the src attribute based on business_id
-    businessElement.appendChild(imageElement); // Append the image to the business element
-      });
     }
 
-    // Render business list on the businesses page
+    // Render  places list on the revies page
     const businessListContainer = document.getElementById('business-list');
     if (businessListContainer) {
       places.forEach(business => {
@@ -40,46 +33,135 @@ fetch('data.json')
       });
     }
 
-    // Render business details on the business-details page
-    const renderBusinessDetails = (business) => {
-      const businessName = document.getElementById('business-name');
-      const businessLogo = document.getElementById('business-logo');
-      const businessAddress = document.getElementById('business-address');
-      const businessPhone = document.getElementById('business-phone');
-      const businessWebsite = document.getElementById('business-website');
-      const businessReviewsContainer = document.getElementById('business-reviews');
+    // Render  places details on the reviewspage
+   
+    // Render place details on the place-details page
+    const renderPlaceDetails = (place) => {
+      const placeName = document.getElementById('place-name');
+      const placeImage = document.getElementById('place-image');
+      const placeAddress = document.getElementById('place-address');
+      const placePhone = document.getElementById('place-phone');
+      const placeWebsite = document.getElementById('place-website');
+      const placeReviewsContainer = document.getElementById('place-reviews');
 
-      if (businessName && businessLogo && businessAddress && businessPhone && businessWebsite && businessReviewsContainer) {
-        businessName.textContent = business.name;
-        businessLogo.src = 'img/usf-logo-png-2.png'; // Replace with your logo file path
-        businessAddress.textContent = `${business.address}, ${business.city}, ${business.state} ${business.zipcode}`;
-        businessPhone.textContent = business.phone;
-        businessWebsite.href = business.website;
+      if (placeName && placeImage && placeAddress && placePhone && placeWebsite && placeReviewsContainer) {
+        placeName.textContent = place.name;
+        placeImage.src = 'path/to/place/image.jpg'; // Replace with your image file path
+        placeAddress.textContent = `${place.address}, ${place.city}, ${place.state} ${place.zipcode}`;
+        placePhone.textContent = place.phone;
+        placeWebsite.href = place.website;
 
         // Clear existing reviews
-        businessReviewsContainer.innerHTML = '';
+        placeReviewsContainer.innerHTML = '';
 
-        // Render reviews for the business
-        const businessReviews = reviews.filter(review => review.business_id === business.business_id);
-        businessReviews.forEach(review => {
+        // Render reviews for the place
+        const placeReviews = reviews.filter(review => review.placeId === place.business_id);
+        placeReviews.forEach(review => {
           const reviewElement = document.createElement('div');
-          reviewElement.textContent = `${review.rating} stars by ${review.Reviewed_by}`;
-          businessReviewsContainer.appendChild(reviewElement);
+          reviewElement.classList.add('review');
+          reviewElement.innerHTML = `
+            <p>${review.rating} stars by ${review.reviewedBy}</p>
+            <button class="edit-review-btn">Edit</button>
+            <button class="delete-review-btn">Delete</button>
+          `;
+          placeReviewsContainer.appendChild(reviewElement);
         });
+
+        // Add event listeners for CRUD operations
+        addReviewEventListeners(place.business_id);
       }
     };
 
     // Check the current page URL and render the appropriate content
     const currentPage = window.location.href.split('/').pop();
-    if (currentPage === 'business-details.html') {
+    if (currentPage === 'place-details.html') {
       const urlParams = new URLSearchParams(window.location.search);
-      const businessId = urlParams.get('id');
-      const business = places.find(place => place.business_id === businessId);
-      if (business) {
-        renderBusinessDetails(business);
+      const placeId = urlParams.get('id');
+      const place = places.find(p => p.business_id === placeId);
+      if (place) {
+        renderPlaceDetails(place);
       }
     }
   })
   .catch(error => console.error('Error loading data:', error));
 
- 
+// Add Review Modal functionality
+const modal = document.getElementById('add-review-modal');
+const addReviewBtn = document.getElementById('add-review-btn');
+const closeModal = document.getElementsByClassName('close')[0];
+const addReviewForm = document.getElementById('add-review-form');
+
+addReviewBtn.onclick = () => {
+  modal.style.display = 'block';
+};
+
+closeModal.onclick = () => {
+  modal.style.display = 'none';
+};
+
+window.onclick = (event) => {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+};
+
+addReviewForm.onsubmit = (event) => {
+  event.preventDefault();
+  const rating = document.getElementById('rating').value;
+  const reviewedBy = document.getElementById('reviewed-by').value;
+
+  // Get the place ID from the URL or other means
+  const urlParams = new URLSearchParams(window.location.search);
+  const placeId = urlParams.get('id');
+
+  const newReview = {
+    placeId,
+    rating,
+    reviewedBy
+  };
+
+  reviews.push(newReview);
+  renderPlaceDetails(places.find(place => place.business_id === placeId));
+  modal.style.display = 'none';
+  addReviewForm.reset();
+};
+
+// Add event listeners for CRUD operations
+const addReviewEventListeners = (placeId) => {
+  const addReviewBtn = document.getElementById('add-review-btn');
+  const placeReviewsContainer = document.getElementById('place-reviews');
+
+  addReviewBtn.addEventListener('click', () => {
+    modal.style.display = 'block';
+  });
+
+  placeReviewsContainer.addEventListener('click', (event) => {
+    if (event.target.classList.contains('edit-review-btn')) {
+      const reviewElement = event.target.parentElement;
+      const review = reviews.find(
+        (r) =>
+          r.placeId === placeId &&
+          r.rating === reviewElement.querySelector('p').textContent.split(' ')[0] &&
+          r.reviewedBy === reviewElement.querySelector('p').textContent.split(' by ')[1]
+      );
+
+      if (review) {
+        // Open an edit modal or form to edit the review
+        console.log('Edit review:', review);
+      }
+    } else if (event.target.classList.contains('delete-review-btn')) {
+      const reviewElement = event.target.parentElement;
+      const review = reviews.find(
+        (r) =>
+          r.placeId === placeId &&
+          r.rating === reviewElement.querySelector('p').textContent.split(' ')[0] &&
+          r.reviewedBy === reviewElement.querySelector('p').textContent.split(' by ')[1]
+      );
+
+      if (review) {
+        // Remove the review from the global variable
+        reviews = reviews.filter((r) => r !== review);
+
+        // Re-render the place details to update the UI
+        renderPlaceDetails(places.find(place => place.business_id === placeId));
+      }
