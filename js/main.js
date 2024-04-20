@@ -17,6 +17,7 @@ fetch('data.json')
         const businessElement = document.createElement('div');
         businessElement.textContent = business.name;
         featuredBusinessesContainer.appendChild(businessElement);
+      };
     }
 
     // Render  places list on the revies page
