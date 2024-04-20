@@ -68,6 +68,7 @@ nav ul {
     list-style-type: none;
     display: flex;
     justify-content: center;
+    margin-bottom: 30px;
 }
 
 nav ul li {
@@ -119,7 +120,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 20px;
-    margin: 20px;
+    margin: 20px auto;
 }
 
 .business-item {
