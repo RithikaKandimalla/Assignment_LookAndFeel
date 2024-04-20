@@ -23,7 +23,7 @@ fetch('data.json')
       });
     }
 
-    // Render  places details on the reviewspage
+ 
    
     // Render place details on the place-details page
     const renderPlaceDetails = (place) => {
