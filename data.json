@@ -9,7 +9,8 @@
       "zipcode": "33612",
       "phone": " (813) 884-4386",
       "website": "https://buschgardens.com/",
-      "type_id": "1"
+      "type_id": "1",
+      "image": "images/image1.jpg"
     },
     {
       "business_id": "2",
@@ -20,7 +21,8 @@
       "zipcode": "33613",
       "phone": "(813) 971-1787",
       "website": "http://www.acropolistaverna.com/locations/new-tampa",
-      "type_id": "2"
+      "type_id": "2",
+      "image": "images/image1.jpg"
     },
     {
       "business_id": "3",
@@ -31,7 +33,8 @@
       "zipcode": "33617",
       "phone": "(813) 987-6000",
       "website": "https://www.msichicago.org/",
-      "type_id": "1"
+      "type_id": "1",
+      "image": "images/image1.jpg"
     },
     {
       "business_id": "4",
@@ -42,7 +45,8 @@
       "zipcode": "33559",
       "phone": "(813) 938-6272",
       "website": "https://www.premiumoutlets.com/outlet/tampa",
-      "type_id": "3"
+      "type_id": "3",
+      "image": "images/image1.jpg"
     },
     {
       "business_id": "5",
@@ -53,7 +57,8 @@
       "zipcode": "33612",
       "phone": "(813) 999-8280",
       "website": "http://north30thpub.com/",
-      "type_id": "2"
+      "type_id": "2",
+      "image": "images/image1.jpg"
     },
     {
       "business_id": "6",
@@ -64,7 +69,8 @@
       "zipcode": "33637",
       "phone": "(813) 987-6204",
       "website": "https://hcfl.gov/locations/lettuce-lake-conservation-park",
-      "type_id": "1"
+      "type_id": "1",
+      "image": "images/image1.jpg"
     },
     {
       "business_id": "7",
@@ -75,7 +81,8 @@
       "zipcode": "33612",
       "phone": "(813) 971-3465",
       "website": "http://www.universitymalltampa.com/",
-      "type_id": "3"
+      "type_id": "3",
+      "image": "images/image1.jpg"
     },
     {
       "business_id": "8",
@@ -86,7 +93,8 @@
       "zipcode": "33613",
       "phone": " (813) 972-3396",
       "website": "https://www.sembler.com/properties/university-plaza/",
-      "type_id": "3"
+      "type_id": "3",
+      "image": "images/image1.jpg"
     },
     {
       "business_id": "9",
@@ -97,7 +105,8 @@
       "zipcode": "33605",
       "phone": "(844) 678-8687",
       "website": "https://nightlyspirits.com/",
-      "type_id": "1"
+      "type_id": "1",
+      "image": "images/image1.jpg"
     },
     {
       "business_id": "10",
@@ -108,7 +117,8 @@
       "zipcode": "33617",
       "phone": "(813) 515-7415",
       "website": "https://www.babushkas.us/temple-terrace",
-      "type_id": "2"
+      "type_id": "2",
+      "image": "images/image1.jpg"
     }
   ],
   "Reviews": [
