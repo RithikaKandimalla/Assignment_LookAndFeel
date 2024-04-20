@@ -2,6 +2,7 @@ let reviews = [];
  const renderBusinessList = (places, container) => {
       places.forEach(place => {
         const businessElement = document.createElement('div');
+         businessElement.classList.add('business-item'); 
         const imageElement = document.createElement('img'); 
         // Set the source attribute of the image element to the place's image URL
         imageElement.src = place.image;
