@@ -11,8 +11,8 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="business.html">Businesses</a></li>
-                <li><a href="business-details.html">Business Details</a></li>
+                <li><a href="business.html">Places</a></li>
+                <li><a href="business-details.html">Reviews</a></li>
                 <li><a href="about.html">About Us</a></li>
             </ul>
         </nav>
@@ -20,18 +20,33 @@
 
     <main>
         <section id="business-details"> 
-            <h1 id="business-name"></h1>
-            <div id="business-info">
-              <img id="business-logo" src="" alt="Business Logo">
-              <p id="business-address"></p>
-              <p id="business-phone"></p>
+            <h1 id="place-name"></h1>
+            <img id="place-image" src="" alt="Place Image">
+              <p id="place-address"></p>
+              <p id="place-phone"></p>
               <p><a id="business-website" href="#" target="_blank">Website</a></p>
         </section>
 
         <section id="business-reviews">
             <h2>Reviews</h2>
-            <div id="review-list"></div>
+            <div id="place-reviews"></div>
+              <div class="review-actions">
+                <button id="add-review-btn">Add Review</button>
+            </div>
         </section>
+        <div id="add-review-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Add Review</h2>
+                <form id="add-review-form">
+                    <label for="rating">Rating:</label>
+                    <input type="number" id="rating" name="rating" min="1" max="5" required>
+                    <label for="reviewed-by">Reviewed By:</label>
+                    <input type="text" id="reviewed-by" name="reviewed-by" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
     </main>
 
     <footer>
