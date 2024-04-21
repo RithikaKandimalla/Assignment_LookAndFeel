@@ -1,59 +1,64 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Details - Local Business Directory</title>
-    <link rel="stylesheet" href="css/main.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Details - Local Business Directory</title>
+<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="business.html">Places</a></li>
-                <li><a href="business-details.html">Reviews</a></li>
-                <li><a href="about.html">About Us</a></li>
-            </ul>
-        </nav>
-    </header>
-
+<header>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="business.html">Places</a></li>
+<li><a href="review.html">Reviews</a></li> <!-- Changed href to review.html -->
+<li><a href="about.html">About Us</a></li>
+</ul>
+</nav>
+</header>
+ 
     <main>
-        <section id="business-details"> 
-            <h1 id="place-name"></h1>
-            <img id="place-image" src="" alt="Place Image">
-              <p id="place-address"></p>
-              <p id="place-phone"></p>
-              <p><a id="business-website" href="#" target="_blank">Website</a></p>
-        </section>
-
-     
-        <section id="business-reviews">
-            <h2>Reviews</h2>
-            <div id="place-reviews"></div>
-              <div class="review-actions">
-                <button id="add-review-btn">Add Review</button>
-            </div>
-        </section>
-        <div id="add-review-modal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Add Review</h2>
-                <form id="add-review-form">
-                    <label for="rating">Rating:</label>
-                    <input type="number" id="rating" name="rating" min="1" max="5" required>
-                    <label for="reviewed-by">Reviewed By:</label>
-                    <input type="text" id="reviewed-by" name="reviewed-by" required>
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-        </div>
-    </main>
-
+<section class="main-heading">
+<h1>Places to Visit in Tampa</h1>
+</section>
+ 
+        <section>
+<h2>Places</h2>
+<div id="business-list"></div>
+</section>
+</main>
+ 
+    <!-- Add Review Modal -->
+<div id="add-review-modal" class="modal">
+<div class="modal-content">
+<span class="close">&times;</span>
+<h2>Add Review</h2>
+<form id="add-review-form">
+<input type="number" id="rating" name="rating" min="1" max="5" placeholder="Rating (1-5)" required>
+<input type="text" id="reviewer" name="reviewer" placeholder="Your Name" required>
+<button type="submit">Submit Review</button>
+</form>
+</div>
+</div>
+<!-- Edit Review Modal -->
+<div id="edit-review-modal" class="modal">
+<div class="modal-content">
+<span class="close">&times;</span>
+<h2>Edit Review</h2>
+<form id="edit-review-form">
+<input type="number" id="rating" name="rating" min="1" max="5" placeholder="Rating (1-5)" required>
+<input type="text" id="reviewer" name="reviewer" placeholder="Your Name" required>
+<button type="submit">Update Review</button>
+</form>
+</div>
+</div>
+ 
     <footer>
-        <p>&copy; 2023 Local Business Directory</p>
-    </footer>
-    
+<p>&copy; 2023 Local Business Directory</p>
+</footer>
+ 
     <script src="js/main.js"></script>
 </body>
 </html>
+
