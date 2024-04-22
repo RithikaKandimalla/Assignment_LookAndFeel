@@ -1,0 +1,116 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5; /* Soft gray background */
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    background-color: #202020; /* Dark gray for header */
+    color: #ffffff;
+    padding: 10px 0;
+    border-bottom: 5px solid #303030; /* Slightly lighter gray for separation */
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    color: #cccccc; /* Light gray for hover effect */
+}
+
+header h1 {
+    text-align: center;
+    padding: 20px;
+    margin-top: 0;
+    font-size: 2.5rem;
+    color: #ffffff; /* Keep the title white for contrast */
+}
+
+main {
+    padding: 20px;
+}
+
+#business-details {
+    max-width: 1000px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#business-details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#business-details th,
+#business-details td {
+    padding: 15px;
+    border: 1px solid #dddddd;
+    text-align: left;
+}
+
+#business-details th {
+    background-color: #303030; /* Dark gray headers */
+    color: #ffffff;
+}
+
+#business-details tr:nth-child(even) {
+    background-color: #eeeeee; /* Light gray for even rows */
+}
+
+footer {
+    background-color: #202020;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    border-top: 5px solid #303030;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Style for buttons */
+button {
+    background-color: #303030; /* Dark gray button */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #202020; /* Even darker on hover */
+}
+
+/* Add any additional custom styles below */

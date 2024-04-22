@@ -1,0 +1,79 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #004a36; /* USF theme color */
+}
+
+nav {
+    text-align: center; /* Center navigation menu */
+    background-color: #002f24; /* Slightly darker shade for contrast */
+    padding: 10px 0; /* Padding for the nav */
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline; /* Inline display for horizontal nav items */
+    margin: 0 20px; /* Space between nav items */
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px; /* Increase padding for larger button area */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+nav a:hover {
+    background-color: #004a36; /* Highlight color on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+.header-image {
+    width: 100%; /* Full width */
+    display: block; /* Ensures no extra space around the image container */
+}
+
+.header-image img {
+    width: 100%;
+    height: auto;
+    max-height: 400px; /* Reducing the maximum height for the image */
+    object-fit: cover; /* Cover the area without losing aspect ratio */
+}
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+main h1 {
+    color: #006747; /* USF green color */
+    margin-bottom: 20px;
+    font-size: 2em; /* Larger font size for main heading */
+}
+
+#featured-businesses {
+    background-color: #eaeaea;
+    padding: 20px;
+    margin-top: 20px; /* Add some space between sections */
+}
+
+footer {
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px; /* Space above footer */
+}
