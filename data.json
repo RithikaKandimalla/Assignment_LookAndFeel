@@ -146,121 +146,121 @@
       "review_id": "1",
       "business_id": "1",
       "rating": "4",
-      "Reviewed by": "Joshua Tam"
+      "ReviewedBy": "Jim"
     },
     {
       "review_id": "2",
       "business_id": "1",
       "rating": "5",
-      "Reviewed by": "Henry Nelson"
+      "ReviewedBy": "Henry"
     },
     {
       "review_id": "1",
       "business_id": "9",
       "rating": "5",
-      "Reviewed by": "Victoria Saunders"
+      "ReviewedBy": "Ram"
     },
     {
       "review_id": "2",
       "business_id": "9",
       "rating": "5",
-      "Reviewed by": "Eva Fernandez"
+      "ReviewedBy": "Even"
     },
     {
       "review_id": "1",
       "business_id": "6",
       "rating": "5",
-      "Reviewed by": "Amy Jean"
+      "ReviewedBy": "Amy "
     },
     {
       "review_id": "2",
       "business_id": "6",
       "rating": "4",
-      "Reviewed by": "George Wilkens"
+      "ReviewedBy": "Sita"
     },
     {
       "review_id": "1",
       "business_id": "3",
       "rating": "5",
-      "Reviewed by": "Kin Wong"
+      "ReviewedBy": "Kin"
     },
     {
       "review_id": "2",
       "business_id": "3",
       "rating": "4",
-      "Reviewed by": "Sanka Hettiarachchi"
+      "ReviewedBy": "Jack"
     },
     {
       "review_id": "1",
       "business_id": "2",
       "rating": "4",
-      "Reviewed by": "Erika Asthenia"
+      "ReviewedBy": "Erik"
     },
     {
       "review_id": "2",
       "business_id": "2",
       "rating": "5",
-      "Reviewed by": "lisa gelzer"
+      "ReviewedBy": "lisa"
     },
     {
       "review_id": "1",
       "business_id": "5",
       "rating": "4",
-      "Reviewed by": "Jack"
+      "ReviewedBy": "Jack"
     },
     {
       "review_id": "2",
       "business_id": "5",
       "rating": "4",
-      "Reviewed by": "Chianti Bloom"
+      "ReviewedBy": "Chai"
     },
     {
       "review_id": "1",
       "business_id": "10",
       "rating": "4",
-      "Reviewed by": "A Treat"
+      "ReviewedBy": "Tray"
     },
     {
       "review_id": "2",
       "business_id": "10",
       "rating": "2",
-      "Reviewed by": "fRo0tLo0p"
+      "ReviewedBy": "Lil"
     },
     {
       "review_id": "1",
       "business_id": "7",
       "rating": "4",
-      "Reviewed by": "Douglas Baldwin"
+      "ReviewedBy": "Bald"
     },
     {
       "review_id": "2",
       "business_id": "7",
       "rating": "5",
-      "Reviewed by": "Elise Schmeling"
+      "ReviewedBy": "Elise"
     },
     {
       "review_id": "1",
       "business_id": "8",
       "rating": "4",
-      "Reviewed by": "Awilda Perez"
+      "ReviewedBy": "Awild"
     },
     {
       "review_id": "2",
       "business_id": "8",
       "rating": "4",
-      "Reviewed by": "Jim"
+      "ReviewedBy": "Jim"
     },
     {
       "review_id": "1",
       "business_id": "4",
       "rating": "5",
-      "Reviewed by": "Prashanth"
+      "ReviewedBy": "Pro"
     },
     {
       "review_id": "2",
       "business_id": "4",
       "rating": "5",
-      "Reviewed by": "Phani"
+      "ReviewedBy": "Phani"
     }
   ],
   "Business Type": [
