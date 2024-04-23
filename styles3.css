@@ -196,3 +196,19 @@ footer {
     bottom: 0;
     width: 100%;
 }
+.github-link {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 12px;
+    background-color: #333; /* GitHub's color */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.github-link:hover {
+    background-color: #444; /* Darker on hover */
+    text-decoration: underline;
+}
