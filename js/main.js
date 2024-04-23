@@ -58,6 +58,7 @@ const createBusinessElement = (place) => {
     addReviewButton.textContent = 'Add Review';
     addReviewButton.addEventListener('click', () => openAddReviewModal(place.business_id));
     businessElement.appendChild(addReviewButton);
+
  
     // Render reviews for the place
     const reviewsContainer = document.createElement('div');
@@ -84,7 +85,8 @@ const renderReviews = (reviews, container, businessId) => {
         const reviewsList = document.createElement('ul');
         reviews.forEach(review => {
             const reviewItem = document.createElement('li');
-            reviewItem.textContent = `Rating: ${review.rating} - Reviewed by: ${review['Reviewed by ']}`;
+            reviewItem.textContent = `Rating: ${review.rating} - Reviewed by: ${review.ReviewedBy}`;
+
  
             // Add edit and delete buttons for each review
             const editButton = document.createElement('button');
@@ -111,10 +113,10 @@ const renderReviews = (reviews, container, businessId) => {
 const openAddReviewModal = (businessId) => {
     const modal = document.getElementById('add-review-modal');
     modal.style.display = 'block';
- 
+
     const closeButton = modal.querySelector('.close');
     closeButton.onclick = () => modal.style.display = 'none';
- 
+
     const addReviewForm = document.getElementById('add-review-form');
     addReviewForm.onsubmit = (event) => {
         event.preventDefault();
@@ -125,21 +127,42 @@ const openAddReviewModal = (businessId) => {
                 review_id: String(Date.now()), // Unique ID based on timestamp
                 business_id: businessId,
                 rating: rating,
-                'Reviewed by ': reviewer
+                'Reviewed by': reviewer // Adjusted key without space
             };
             reviews.push(newReview);
             // Update reviews in data.json (simulate persistence)
-            updateReviewsInJSONFile(reviews);
+            // updateReviewsInJSONFile(reviews); // This needs a backend to work
+            // Append the new review to the DOM
+            const placeElement = document.querySelector(`.business-item[data-business-id="${businessId}"]`);
+            const reviewsContainer = placeElement.querySelector('.reviews-container');
+            const newReviewElement = createReviewElement(newReview);
+            reviewsContainer.appendChild(newReviewElement);
             // Close modal
             modal.style.display = 'none';
-            // Refresh the page to reflect the updated reviews
-            window.location.reload();
         } else {
             alert('Please provide both rating and reviewer name.');
         }
     };
 };
- 
+
+// Function to create a review element
+const createReviewElement = (review) => {
+    const reviewItem = document.createElement('li');
+    reviewItem.textContent = `Rating: ${review.rating} - Reviewed by: ${review['Reviewed by']}`;
+
+    const editButton = document.createElement('button');
+    editButton.textContent = 'Edit';
+    // The rest of your edit button logic here
+
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    // The rest of your delete button logic here
+
+    reviewItem.appendChild(editButton);
+    reviewItem.appendChild(deleteButton);
+
+    return reviewItem;
+};
  
 // Function to open Edit Review modal
 const openEditReviewModal = (review, businessId) => {
