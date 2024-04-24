@@ -7,15 +7,14 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: #f2f2f2; /* Soft background for better readability */
-    color: #333; /* Darker text color for contrast */
+    background-color: #f9f9f9;
     line-height: 1.6;
 }
 
 header {
-    background: #005f73; /* Darker theme color for a modern look */
+    background: #333;
     color: #fff;
-    padding: 10px 0;
+    padding-top: 10px;
     min-height: 70px;
     border-bottom: #ffc107 solid 3px;
 }
@@ -42,13 +41,13 @@ header nav {
 }
 
 header a:hover {
-    color: #e9d8a6; /* Soft color for nav items for a subtle look on hover */
+    color: #ffc107;
 }
 
 .main-heading h1 {
     text-align: center;
     margin: 40px 0;
-    color: #003d5b; /* Strong color for main heading for focus */
+    color: #333;
 }
 
 #business-list {
@@ -58,41 +57,159 @@ header a:hover {
 }
 
 .business-item {
-    display: flex;
-    flex-wrap: wrap; /* Allows items to wrap to the next line if needed */
-    align-items: flex-start; /* Aligns items to the start of the flex container */
-    justify-content: space-between; /* Distributes space between items */
-    padding: 20px;
-    border: 1px solid #ddd;
     background: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 20px;
     border-radius: 5px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.business-info {
-    flex-grow: 1;
-    padding-right: 10px; /* Adds spacing between the text and the buttons */
-}
-
-/* Aligning the Edit and Delete buttons to the bottom right */
-.business-actions {
-    display: flex;
-    flex-direction: column; /* Stack buttons vertically */
-    align-items: flex-end; /* Align buttons to the end (right side) */
-    padding-top: 10px; /* Adds space between the text and the buttons */
 }
 
 footer {
-    background: #005f73;
+    background: #333;
     color: #fff;
     text-align: center;
     padding: 20px 0;
-    margin-top: 40px;
 }
 
 footer p {
     margin: 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Existing styles */
+
+#business-list .business-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    gap: 20px; /* This adds space between the image and the business info */
+}
+
+.business-item .business-image {
+    flex-shrink: 0; /* Prevent the image from shrinking */
+    width: 200px; /* Set a fixed width for the image */
+    height: 120px; /* Set a fixed height for the image */
+    object-fit: cover; /* Ensure the aspect ratio is maintained */
+    border-radius: 5px; /* Rounded corners for the image */
+}
+
+.business-item .business-info {
+    flex-grow: 1; /* Allow the business info to take up the remaining space */
+    padding: 10px;
+}
+
+.business-item .business-info h3 {
+    margin-top: 0;
+    color: #007bff; /* Give the business name a distinct color */
+}
+
+.business-item .business-info p {
+    margin: 5px 0;
+}
+
+.business-item .business-link {
+    display: inline-block;
+    margin-right: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.business-item .business-link:hover {
+    text-decoration: underline;
+}
+
+/* Other styles remain the same */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #e6e9f0 0%, #eef1f5 100%);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+#business-list .business-item {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    color: #333;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+}
+
+.business-item .business-image {
+    flex-shrink: 0;
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.business-item .business-info {
+    flex-grow: 1;
+    padding: 10px;
+}
+
+.business-item .business-info h3 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.business-item .business-info p {
+    margin: 5px 0;
+}
+
+.business-item .business-link {
+    display: inline-block;
+    margin-right: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.business-item .business-link:hover {
+    text-decoration: underline;
 }
 
 /* Additional styles for buttons and links */
@@ -117,33 +234,55 @@ button:hover, .business-link:hover {
     border: 1px solid #007bff;
 }
 
-/* Aligning Edit and Delete buttons */
-.edit-button, .delete-button {
-    padding: 8px 12px; /* Smaller padding for button size */
-    margin-left: 10px; /* Space between buttons */
-    font-size: 14px; /* Smaller font size for text within the buttons */
-    border-radius: 4px; /* Rounded corners for buttons */
+/* Existing styles */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #d4edda 0%, #e8f5e9 100%); /* light green gradient */
+    line-height: 1.6;
+    padding: 20px;
 }
 
-/* Additional styling for Edit button */
-	.edit-button, .delete-button {
-    padding: 8px 12px; /* Padding for the buttons */
-    margin-top: 4px; /* Adds space between stacked buttons */
-    font-size: 14px; /* Font size for the buttons */
-    border-radius: 4px; /* Rounded corners for the buttons */
-    text-align: center;
-    border: none;
-    cursor: pointer;
+header {
+    background: #155724; /* darker shade of green for the header */
+    color: #fff;
+    padding-top: 10px;
+    min-height: 70px;
+    border-bottom: #c3e6cb solid 3px; /* lighter green for the bottom border */
 }
-	
-	.edit-button:hover {
-	    background-color: #e6ac00; /* Darker yellow on hover */
-	    color: #333;
-	}
-	
-	/* Additional styling for Delete button */
-		
-	.delete-button:hover {
-	    background-color: #c82333; /* Darker red on hover */
-	}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header a:hover {
+    color: #c3e6cb; /* lighter green when hovering over links */
+}
+
+/* The rest of your existing CSS for .main-heading, #business-list, .business-item, footer, modal, etc. */
+
+.business-item {
+    background: #fff;
+    color: #155724; /* darker shade of green for text */
+    border: 1px solid #c3e6cb; /* lighter green for the border */
+    /* Other styles */
+}
+
+button, .business-link {
+    background-color: #155724; /* darker shade of green for buttons and links */
+    color: white;
+    /* Other styles */
+}
+
+button:hover, .business-link:hover {
+    background-color: white;
+    color: #155724;
+    border: 1px solid #155724;
+}
+
+/* Add any additional custom styles below */
+
 
