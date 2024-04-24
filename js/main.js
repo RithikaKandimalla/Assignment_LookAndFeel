@@ -1,4 +1,4 @@
-let reviews = [];
+ let reviews = [];
 let places = [];
  
 // Load data from JSON file
@@ -73,30 +73,30 @@ const createBusinessElement = (place) => {
 // Function to render reviews
 const renderReviews = (reviews, container, businessId) => {
     container.innerHTML = '';
- 
+
     if (reviews.length > 0) {
         const totalRating = reviews.reduce((acc, curr) => acc + parseInt(curr.rating), 0);
         const averageRating = totalRating / reviews.length;
         const averageRatingElement = document.createElement('div');
         averageRatingElement.textContent = `Average Rating: ${averageRating.toFixed(1)}`;
         container.appendChild(averageRatingElement);
- 
+
         const reviewsList = document.createElement('ul');
         reviews.forEach(review => {
             const reviewItem = document.createElement('li');
             reviewItem.textContent = `Rating: ${review.rating} - Reviewed by: ${review['Reviewed by ']}`;
- 
+
             // Add edit and delete buttons for each review
             const editButton = document.createElement('button');
             editButton.textContent = 'Edit';
             editButton.addEventListener('click', () => openEditReviewModal(review, businessId), { once: true });
             reviewItem.appendChild(editButton);
- 
+
             const deleteButton = document.createElement('button');
             deleteButton.textContent = 'Delete';
             deleteButton.addEventListener('click', () => deleteReview(review.review_id, businessId), { once: true });
             reviewItem.appendChild(deleteButton);
- 
+
             reviewsList.appendChild(reviewItem);
         });
         container.appendChild(reviewsList);
@@ -106,15 +106,15 @@ const renderReviews = (reviews, container, businessId) => {
         container.appendChild(noReviewsElement);
     }
 };
- 
+
 // Function to open Add Review modal
 const openAddReviewModal = (businessId) => {
     const modal = document.getElementById('add-review-modal');
     modal.style.display = 'block';
- 
+
     const closeButton = modal.querySelector('.close');
     closeButton.onclick = () => modal.style.display = 'none';
- 
+
     const addReviewForm = document.getElementById('add-review-form');
     addReviewForm.onsubmit = (event) => {
         event.preventDefault();
@@ -132,15 +132,16 @@ const openAddReviewModal = (businessId) => {
             updateReviewsInJSONFile(reviews);
             // Close modal
             modal.style.display = 'none';
-            // Refresh the page to reflect the updated reviews
-            window.location.reload();
+            // Refresh the reviews container
+            const placeElement = document.querySelector(`.business-item[data-business-id="${businessId}"]`);
+            const reviewsContainer = placeElement.querySelector('.reviews-container');
+            const placeReviews = reviews.filter(review => review.business_id === businessId);
+            renderReviews(placeReviews, reviewsContainer, businessId);
         } else {
             alert('Please provide both rating and reviewer name.');
         }
     };
 };
- 
- 
 // Function to open Edit Review modal
 const openEditReviewModal = (review, businessId) => {
     const modal = document.getElementById('edit-review-modal');
