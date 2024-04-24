@@ -6,18 +6,22 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: #f2f2f2; /* Soft background for better readability */
+    color: #333; /* Darker text color for contrast */
+    line-height: 1.6;
 }
 
 header {
-    background-color: #004a36; /* USF theme color */
+    background-color: #005f73; /* Darker theme color for a modern look */
+    color: #ffffff;
+    padding: 20px 0;
 }
 
 nav {
-    text-align: center; /* Center navigation menu */
-    background-color: #002f24; /* Slightly darker shade for contrast */
-    padding: 10px 0; /* Padding for the nav */
+    text-align: center;
+    background-color: #0a9396; /* Complementary color for the navbar */
+    padding: 15px 0;
 }
 
 nav ul {
@@ -25,56 +29,57 @@ nav ul {
 }
 
 nav ul li {
-    display: inline; /* Inline display for horizontal nav items */
-    margin: 0 20px; /* Space between nav items */
+    display: inline-block; /* Align items horizontally */
+    margin: 0 25px;
 }
 
 nav a {
-    color: #ffffff;
+    color: #e9d8a6; /* Soft color for nav items for a subtle look */
     text-decoration: none;
     font-weight: bold;
-    padding: 10px 15px; /* Increase padding for larger button area */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    padding: 12px 18px;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 nav a:hover {
-    background-color: #004a36; /* Highlight color on hover */
-    border-radius: 5px; /* Rounded corners on hover */
-}
-
-.header-image {
-    width: 100%; /* Full width */
-    display: block; /* Ensures no extra space around the image container */
+    color: #ffffff; /* Keep text color white on hover for visibility */
+    background-color: #3aafa9; /* A softer, complementary blue for a descent hover effect */
+    border-radius: 5px; /* Maintain rounded corners on hover */
 }
 
 .header-image img {
     width: 100%;
     height: auto;
-    max-height: 400px; /* Reducing the maximum height for the image */
-    object-fit: cover; /* Cover the area without losing aspect ratio */
+    max-height: 400px;
+    object-fit: cover;
 }
 main {
-    padding: 20px;
-    text-align: center;
+    padding: 30px 20px; /* More padding for better spacing */
+    text-align: left; /* Align text to the left for readability */
+    background: #ffffff; /* White background for the main content area */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 main h1 {
-    color: #006747; /* USF green color */
-    margin-bottom: 20px;
-    font-size: 2em; /* Larger font size for main heading */
+    color: #003d5b; /* Strong color for main heading for focus */
+    margin-bottom: 30px; /* More space below the heading */
+    font-size: 2.5rem; /* Larger font size for prominence */
 }
 
 #featured-businesses {
-    background-color: #eaeaea;
-    padding: 20px;
-    margin-top: 20px; /* Add some space between sections */
+    background-color: #eaeaea; /* Light background for featured section */
+    padding: 30px; /* More padding for better layout */
+    margin-top: 30px; /* More space above the section for separation */
 }
 
 footer {
-    background-color: #333;
+    background-color: #005f73; /* Match header color for consistency */
     color: #ffffff;
     text-align: center;
-    padding: 10px 0;
-    margin-top: 20px; /* Space above footer */
+    padding: 20px 0; /* More padding for a taller footer */
+    margin-top: 40px; /* More space above footer */
 }
-
+#featured-businesses h2 {
+    text-align: center; /* This will center-align the section header within the 'featured-businesses' section */
+    /* Other styling properties */
+}
