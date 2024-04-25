@@ -1,4 +1,4 @@
-// Load data from JSON file
+ // Load data from JSON file
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
@@ -18,14 +18,15 @@ fetch('data.json')
 const renderBusinessDetails = (places, container) => {
     const table = document.createElement('table');
     const headerRow = document.createElement('tr');
-    headerRow.innerHTML = '<th>Name</th><th>Timings</th><th>Price</th>';
+    headerRow.innerHTML = '<th>Name</th><th>Weekday Timings</th><th>Weekend Timings</th><th>Price</th>';
     table.appendChild(headerRow);
 
     places.forEach(place => {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${place.name}</td>
-            <td>${place.timings}</td>
+            <td>${place.timings.Weekdays}</td>
+            <td>${place.timings.Weekends}</td>
             <td>${place.Price}</td>
         `;
         table.appendChild(row);
