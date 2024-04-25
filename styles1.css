@@ -7,16 +7,17 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
+    background: linear-gradient(to right, #f4f4f4 0%, #ffffff 100%);
     line-height: 1.6;
+    padding: 20px;
 }
 
 header {
-    background: #333;
+    background: #004a36; /* Primary Color */
     color: #fff;
     padding-top: 10px;
     min-height: 70px;
-    border-bottom: #ffc107 solid 3px;
+    border-bottom: #cccccc solid 3px; /* Accent Color for contrast */
 }
 
 header a {
@@ -41,13 +42,40 @@ header nav {
 }
 
 header a:hover {
-    color: #ffc107;
+    color: #cccccc; /* Accent Color */
+}
+
+nav {
+    text-align: center;
+    background-color: #004a36; /* Updated to match styles1.css */
+    padding: 10px 0;
+}
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase; /* Added to match styles1.css */
+    font-size: 16px; /* Ensured consistency */
+    /* ... other styles ... */
+}
+
+main {
+    padding: 20px;
+    text-align: center;
 }
 
 .main-heading h1 {
     text-align: center;
     margin: 40px 0;
-    color: #333;
+    color: #333; /* Secondary Color for texts */
 }
 
 #business-list {
@@ -66,7 +94,7 @@ header a:hover {
 }
 
 footer {
-    background: #333;
+    background: #333; /* Secondary Color */
     color: #fff;
     text-align: center;
     padding: 20px 0;
@@ -110,63 +138,9 @@ footer p {
     text-decoration: none;
     cursor: pointer;
 }
-/* Existing styles */
 
-#business-list .business-item {
-    display: flex;
-    align-items: center;
-    background: #fff;
-    color: #333;
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 5px;
-    gap: 20px; /* This adds space between the image and the business info */
-}
-
-.business-item .business-image {
-    flex-shrink: 0; /* Prevent the image from shrinking */
-    width: 200px; /* Set a fixed width for the image */
-    height: 120px; /* Set a fixed height for the image */
-    object-fit: cover; /* Ensure the aspect ratio is maintained */
-    border-radius: 5px; /* Rounded corners for the image */
-}
-
-.business-item .business-info {
-    flex-grow: 1; /* Allow the business info to take up the remaining space */
-    padding: 10px;
-}
-
-.business-item .business-info h3 {
-    margin-top: 0;
-    color: #007bff; /* Give the business name a distinct color */
-}
-
-.business-item .business-info p {
-    margin: 5px 0;
-}
-
-.business-item .business-link {
-    display: inline-block;
-    margin-right: 10px;
-    color: #007bff;
-    text-decoration: none;
-}
-
-.business-item .business-link:hover {
-    text-decoration: underline;
-}
-
-/* Other styles remain the same */
-
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #e6e9f0 0%, #eef1f5 100%);
-    line-height: 1.6;
-    padding: 20px;
-}
-
-#business-list .business-item {
+/* Ensure that the business item styling is consistent with the theme */
+.business-item {
     display: flex;
     align-items: center;
     background: #ffffff;
@@ -194,7 +168,7 @@ body {
 
 .business-item .business-info h3 {
     margin-top: 0;
-    color: #007bff;
+    color: #004a36; /* Primary Color for business name */
 }
 
 .business-item .business-info p {
@@ -204,7 +178,7 @@ body {
 .business-item .business-link {
     display: inline-block;
     margin-right: 10px;
-    color: #007bff;
+    color: #004a36; /* Primary Color for links */
     text-decoration: none;
 }
 
@@ -212,9 +186,9 @@ body {
     text-decoration: underline;
 }
 
-/* Additional styles for buttons and links */
+/* Buttons and links receive the primary color as well */
 button, .business-link {
-    background-color: #007bff;
+    background-color: #004a36; /* Primary Color */
     border: none;
     color: white;
     padding: 10px 15px;
@@ -230,59 +204,20 @@ button, .business-link {
 
 button:hover, .business-link:hover {
     background-color: white;
-    color: #007bff;
-    border: 1px solid #007bff;
+    color: #004a36;
+    border: 1px solid #004a36;
 }
-
-/* Existing styles */
-
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #d4edda 0%, #e8f5e9 100%); /* light green gradient */
-    line-height: 1.6;
-    padding: 20px;
-}
-
-header {
-    background: #155724; /* darker shade of green for the header */
-    color: #fff;
-    padding-top: 10px;
-    min-height: 70px;
-    border-bottom: #c3e6cb solid 3px; /* lighter green for the bottom border */
-}
-
-header a {
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
-}
-
-header a:hover {
-    color: #c3e6cb; /* lighter green when hovering over links */
-}
-
-/* The rest of your existing CSS for .main-heading, #business-list, .business-item, footer, modal, etc. */
 
 .business-item {
-    background: #fff;
-    color: #155724; /* darker shade of green for text */
-    border: 1px solid #c3e6cb; /* lighter green for the border */
-    /* Other styles */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transform: perspective(1000px) rotateX(0deg) translateZ(0);
+    will-change: transform, box-shadow;
 }
 
-button, .business-link {
-    background-color: #155724; /* darker shade of green for buttons and links */
-    color: white;
-    /* Other styles */
-}
-
-button:hover, .business-link:hover {
-    background-color: white;
-    color: #155724;
-    border: 1px solid #155724;
+.business-item:hover {
+    transform: perspective(1000px) rotateX(5deg) translateZ(20px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Add any additional custom styles below */
-
 
