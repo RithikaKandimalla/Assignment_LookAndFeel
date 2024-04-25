@@ -1,34 +1,52 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Places to Visit - Tampa Area</title>
     <link rel="stylesheet" href="styles2.css">
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <!-- Custom JavaScript files are included with 'defer' to ensure they execute after the HTML is fully loaded -->
+    <script src="js/business.js" defer></script>
+    <script src="js/charts.js" defer></script>
 </head>
 <body>
     <header>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                 <li><a href="business-details.html">Places</a></li>
-                <li><a href="business.html"class="active">Timings and Price</a></li>
-                    <li><a href="about.html">About Us</a></li>
+                <li><a href="business-details.html">Places</a></li>
+                <li><a href="business.html" class="active">Timings and Price</a></li>
+                <li><a href="about.html">About Us</a></li>
             </ul>
         </nav>
     </header>
 
-        <main>
+     sssss
+    <main>
         <section id="business-details">
             <!-- Business details table will be dynamically generated here -->
+        </section>
+
+        <section class="charts-section">
+            <h2>Data Visualizations</h2>
+            <div>
+                <h3>Average Rating for Each Place</h3>
+                <canvas id="averageRatingByPlaceChart"></canvas>
+            </div>
+            <div>
+                <h3>Prices vs Places</h3>
+                <canvas id="pricesVsPlacesChart"></canvas>
+            </div>
+            <div>
+                <h3>Top 5 Places by Rating</h3>
+                <canvas id="topPlacesByRatingChart"></canvas>
+            </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Local Business Directory</p>
     </footer>
-
-    <script src="js/business.js"></script>
 </body>
 </html>
-
-
