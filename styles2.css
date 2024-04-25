@@ -1,3 +1,11 @@
+ /* Basic Reset */
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Basic Reset */
 * {
     margin: 0;
@@ -11,6 +19,10 @@ body {
     line-height: 1.6;
     padding: 20px;
 }
+/* Rest of your CSS styles... */
+
+ 
+
 
 header {
     background: #004a36; /* Primary Color */
@@ -47,11 +59,15 @@ header a:hover {
 
 nav {
     text-align: center;
-    background-color: #004a36; /* Updated to match styles1.css */
+    background-color: #004a36;  
     padding: 10px 0;
 }
 nav ul {
     list-style: none;
+}
+nav a.active {
+    color: black; 
+    background-color: #006747;  
 }
 
 nav ul li {
@@ -64,7 +80,7 @@ nav a {
     text-decoration: none;
     text-transform: uppercase; /* Added to match styles1.css */
     font-size: 16px; /* Ensured consistency */
-    /* ... other styles ... */
+ 
 }
 
 main {
@@ -73,9 +89,9 @@ main {
 }
 
 main h1 {
-    color: #006747; /* USF green color */
+    color: #006747; 
     margin-bottom: 20px;
-    font-size: 2em; /* Larger font size for main heading */
+    font-size: 2em;  
 }
 
 .main-heading h1 {
@@ -86,34 +102,76 @@ main h1 {
 
 
 #business-details {
-    max-width: 1000px;
-    margin: 30px auto;
-    background-color: #ffffff;
-    padding: 20px;
+    max-width: 1200px;  
+    margin: 50px auto;  
+    background-color: #ffffff;  
+    padding: 30px;  
     border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
 }
 
 #business-details table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 0;  
+    border: 1px solid #e1e1e1; 
 }
 
 #business-details th,
 #business-details td {
     padding: 15px;
-    border: 1px solid #dddddd;
+    border: none;  
     text-align: left;
 }
 
 #business-details th {
-    background-color: #303030; /* Dark gray headers */
+    
+    background-color: hsl(160, 30%, 50%);
     color: #ffffff;
+    font-family: 'Arial', sans-serif; 
+    font-weight: bold; / 
+    
 }
 
+
 #business-details tr:nth-child(even) {
-    background-color: #eeeeee; /* Light gray for even rows */
+    background-color: #f8f8f8;  
+}
+/* Styles for Charts Section */
+.charts-section {
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.charts-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.charts-section div {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.charts-section h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.charts-section canvas {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 footer {
@@ -146,5 +204,49 @@ button:hover {
     background-color: #202020; /* Even darker on hover */
 }
 
-/* Add any additional custom styles below */
+/* Chart container styling for responsiveness */
+ 
+  
+.charts-section {
+    padding: 20px;
+    background-color: #ffffff; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+    max-width: 1200px;  
+    margin: 50px auto;  
+    text-align: center; 
+}
+
+/* Styles for each chart container within the section */
+.charts-section > div {
+    height: 600px;  
+    background-color: #f8f8f8;  
+    border: 1px solid #e1e1e1;  
+    padding: 30px;  
+    margin-bottom: 50px;  
+    border-radius: 8px; 
+    
+}
+
+/* Specific styles for chart titles (h3 within each chart container) */
+.charts-section h3 {
+    color: #333;
+    margin-bottom: 1rem; 
+    text-align: center; 
+    font-size: 1.25rem; 
+}
+
+/* Ensure the canvas takes up the full height of its container */
+.charts-section canvas {
+    height: 90% !important; 
+    box-shadow: none; 
+}
+
+.charts-section h2, .charts-section h3 {
+    font-family: 'Arial', sans-serif;  
+    font-weight: bold;  
+     
+}
+
+ 
 
