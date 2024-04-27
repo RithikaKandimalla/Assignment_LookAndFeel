@@ -24,16 +24,22 @@ fetch('data.json')
                     label: 'Average Rating',
                     data: averageRatingByPlace, // Use the array of average ratings
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.5)',
-                        'rgba(54, 162, 235, 0.5)',
-                        'rgba(255, 206, 86, 0.5)',
-                        // Additional colors for each place
+                    'rgba(255, 99, 132, 0.2)', // Light red
+'rgba(54, 162, 235, 0.2)', // Light blue
+'rgba(255, 206, 86, 0.2)', // Light yellow
+'rgba(75, 192, 192, 0.2)', // Light teal
+'rgba(153, 102, 255, 0.2)', // Light purple
+'rgba(255, 159, 64, 0.2)',  // Light orange
+'rgba(199, 199, 199, 0.2)', // Light grey
+'rgba(83, 109, 254, 0.2)',  // Other light blue
+'rgba(40, 167, 69, 0.2)',   // Light green
+'rgba(255, 87, 34, 0.2)'    // Other light red     
                     ],
                     borderColor: [
                         'rgba(255, 99, 132, 1)',
                         'rgba(54, 162, 235, 1)',
                         'rgba(255, 206, 86, 1)',
-                        // Additional border colors for each place
+                         
                     ],
                     borderWidth: 1
                 }]
